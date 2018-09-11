@@ -30,26 +30,28 @@
             <div></div>
         </div>
         <section class="buttons">
-            <div id="content"></div>
-            <div id="verify-container" class="hidden">
+            <div id="print-container" class="hidden route">
+                <div id="print-content"></div>
+            </div>
+            <div id="verify-container" class="hidden route">
                 <input type="text" id="display-verify" />
                 <button id="verify">Verify</button>
                 <hr />
                 <div id="verify-content"></div>
             </div>
-            <div id="lookup-container" class="hidden">
+            <div id="lookup-container" class="hidden route">
                 <input type="text" id="display-lookup" />
                 <button id="lookup">Lookup</button>
                 <hr />
                 <div id="lookup-content"></div>
             </div>
-            <div id="contains-container" class="hidden">
+            <div id="contains-container" class="hidden route">
                 <input type="text" id="display-contains" />
                 <button id="contains">Contains</button>
                 <hr />
                 <div id="contains-content"></div>
             </div>
-            <div id="update-container" class="hidden">
+            <div id="update-container" class="hidden route">
                 <div><label for="update-name"> Name
                     </label>
                     <input type="text" id="update-name" /></div>
@@ -63,7 +65,7 @@
                 <hr />
                 <div id="update-content"></div>
             </div>
-            <div id="add-container" class="hidden">
+            <div id="add-container" class="hidden route">
                 <div><label for="display-name"> Name
                     </label>
                     <input type="text" id="display-name" /></div>
@@ -77,7 +79,7 @@
                 <hr />
                 <div id="add-content"></div>
             </div>
-            <div id="delete-container" class="">
+            <div id="delete-container" class="hidden route">
                 <input type="text" id="display-delete" />
                 <button id="delete">Delete</button>
                 <hr />

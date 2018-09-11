@@ -24,15 +24,25 @@ const showInput = function () {
   $('input').removeClass('hide');
 }
 
-//new code start
-// $(function) {
-//   $('#print-route').on('click', function() {
-//     let buttons = $(this).attr('data-buttons')
-//   });
-// }
+const hideAllRoutes = function () {
+  $('.route').addClass('hidden');
+}
+
+const showRoute = function (route) {
+  hideAllRoutes();
+  $(route).removeClass('hidden');
+}
+
+$('#print-route').on('click', () => showRoute('#print-container'));
+$('#verify-route').on('click', () => showRoute('#verify-container'));
+$('#lookup-route').on('click', () => showRoute('#lookup-container'));
+$('#contains-route').on('click', () => showRoute('#contains-container'));
+$('#update-route').on('click', () => showRoute('#update-container'));
+$('#add-route').on('click', () => showRoute('#add-container'));
+$('#delete-route').on('click', () => showRoute('#delete-container'));
 
 const print = function () {
-  const content = $("#content");
+  const content = $("#print-content");
   content.empty();
   for (let i = 0; i < employeeList.length; i++) {
     let user = employeeList[i];
@@ -120,17 +130,3 @@ const del = function () {
   $('#delete-content').html(`<div class="user-info">Employee Not Found</div>`)
 }
 $('#delete').on('click', del);
-//     }
-//   case 'office number':
-//     {
-//       const query = prompt('find user by office number');
-
-//       for (let i = 0; i < employeeList.length; i++) {
-//         let user = employeeList[i]
-//         if (user.officeNum === Number(query)) {
-//           render(user.name, user.officeNum, user.phoneNum);
-//         }
-//       }
-//       break;
-//     }
-// }

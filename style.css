@@ -16,16 +16,12 @@ body {
         "sidebar content";
 }
 
-
-
-  /* display: flex;
-  text-align: center; */
-  /* top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%) */
-
-
+section {
+    grid-area: content;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
 
 header {
     color: #fff;
@@ -58,13 +54,14 @@ nav {
     grid-template-rows: 1fr 1fr 1fr
 }
 
-.content {
-    grid-area: content;
-    width: 200px;
+input {
     border-radius: 100px;
-    border-width: 3px light rgb(180, 176, 176);
+    border: 1px solid rgb(180, 176, 176);
     border-style: solid;
-    position: absolute;
+}
+
+button {
+    border: none;
 }
 
 .hidden {
