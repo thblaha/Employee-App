@@ -19,9 +19,11 @@ const employeeList = [{
     phoneNum: '(912)555-5555'
   },
 ];
-const hideInput = function () {
+
+const showInput = function () {
   $('input').removeClass('hide');
 }
+
 //new code start
 // $(function) {
 //   $('#print-route').on('click', function() {
@@ -103,22 +105,21 @@ const add = function () {
 }
 $('#add').on('click', add);
 
+const del = function () {
 
+  const query = $('#display-delete').val();
 
-//       const query = prompt('to delete, enter user name');
-
-//       for (let i = 0; i < employeeList.length; i++) {
-//         let user = employeeList[i]
-//         if (user.name.indexOf(query) !== -1) {
-//           employeeList.splice(i, 1);
-//         }
-//       }
-//       for (let i = 0; i < employeeList.length; i++) {
-//         let user = employeeList[i]
-//         render(user.name, user.officeNum, user.phoneNum);
-//       }
-
-//       break;
+  for (let i = 0; i < employeeList.length; i++) {
+    let user = employeeList[i]
+    if (user.name == query) {
+      const deletedEmployees = employeeList.splice(i, 1);
+      $('#delete-content').html(`<div class="user-info">Employee Deleted</div>`)
+      return deletedEmployees;
+    }
+  }
+  $('#delete-content').html(`<div class="user-info">Employee Not Found</div>`)
+}
+$('#delete').on('click', del);
 //     }
 //   case 'office number':
 //     {
