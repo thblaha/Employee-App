@@ -16,7 +16,16 @@ body {
         "sidebar content";
 }
 
-.box {}
+
+
+  /* display: flex;
+  text-align: center; */
+  /* top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) */
+
+
 
 header {
     color: #fff;
@@ -51,6 +60,11 @@ nav {
 
 .content {
     grid-area: content;
+    width: 200px;
+    border-radius: 100px;
+    border-width: 3px light rgb(180, 176, 176);
+    border-style: solid;
+    position: absolute;
 }
 
 .hidden {

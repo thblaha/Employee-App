@@ -19,7 +19,9 @@ const employeeList = [{
     phoneNum: '(912)555-5555'
   },
 ];
-
+const hideInput = function () {
+  $('input').removeClass('hide');
+}
 //new code start
 // $(function) {
 //   $('#print-route').on('click', function() {
@@ -87,43 +89,22 @@ const update = function () {
   }
 }
 $('#update').on('click', update);
-  
 
-//   case 'update':
-//     {
-//       const updateUser = prompt('update: begin by entering a name');
-//       const updateField = prompt('enter a field to update: name, officeNum, phoneNum');
-//       for (let i = 0; i < employeeList.length; i++) {
-//         const user = employeeList[i]
-//         if (user.name.toLowerCase() === updateUser.toLowerCase()) {
-//           const updateValue = prompt('enter a value');
-//           user[updateField] = updateValue;
-//           render(`${user.name} ${user.officeNum} ${user.phoneNum}`);
-//         }
-//       }
-//       break;
-//     }
+const add = function () {
+  const addUser = $('#display-name').val();
+  const addNumber = $('#display-number').val();
+  const addPhone = $('#display-phone').val();
+  const addEmployee = {};
+  addEmployee.name = addUser;
+  addEmployee.officeNum = addNumber;
+  addEmployee.phoneNum = addPhone;
+  employeeList.push(addEmployee);
+  $('#add-content').append(`<div class="user=info">${addEmployee.name}<br/>${addEmployee.officeNum}<br/>${addEmployee.phoneNum}</div>`);
+}
+$('#add').on('click', add);
 
-//   case 'add':
-//     {
-//       const name = prompt('add name');
-//       const office = prompt('add office number');
-//       const phone = prompt('add phone number');
-//       const newUser = {
-//         name: name,
-//         officeNum: office,
-//         phoneNum: phone
-//       }
-//       employeeList.push(newUser);
-//       for (let i = 0; i < employeeList.length; i++) {
-//         let user = employeeList[i]
-//         render(user.name, user.officeNum, user.phoneNum);
-//       }
-//       render(employeeList.length, newUser.toLowerCase());
-//       break;
-//     }
-//   case 'delete':
-//     {
+
+
 //       const query = prompt('to delete, enter user name');
 
 //       for (let i = 0; i < employeeList.length; i++) {
